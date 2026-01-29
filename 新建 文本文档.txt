@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>客服聊天</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 空白容器，美洽客服会浮在右下角 -->
+<div id="chat-container"></div>
+
+<script>
+  (function(a, b, c, d, e, j, s){
+    a[d] = a[d] || function(){
+      (a[d].a = a[d].a || []).push(arguments);
+    };
+    j = b.createElement(c);
+    s = b.getElementsByTagName(c)[0];
+    j.async = true;
+    j.charset = 'UTF-8';
+    j.src = 'https://static.meiqia.com/widget/loader.js';
+    s.parentNode.insertBefore(j, s);
+  })(window, document, 'script', '_MEIQIA');
+
+  // 美洽企业 ID
+  _MEIQIA('entId', '49978004c3137028bab324ca3d6b73d2');
+
+  // 自动弹出客服窗口
+  _MEIQIA('ready', function(){
+    try {
+      _MEIQIA('showPanel');
+    } catch(e){
+      console.warn('自动弹出被阻止，用户可点击右下角客服按钮');
+    }
+  });
+</script>
+
+</body>
+</html>
